@@ -1,0 +1,69 @@
+let sayilar = [1, 5, 7, 15, 3, 25];
+
+//sayıların karesi
+for(let i in sayilar){
+    //console.log(Math.pow(sayilar[i],2));
+}
+
+//sayıların hangisi 5in katı
+for(let i in sayilar){
+    if(sayilar[i]%5==0){
+        //console.log(sayilar[i]);
+    }
+}
+
+//çift sayıların toplamı
+let toplam=0 ;
+for(let i in sayilar){
+    
+    if(sayilar[i]%2==0){
+        toplam += sayilar[i];            
+    }
+}
+//console.log(toplam);
+
+let urunler = ["iphone 12", "samsung s22", "iphone 13", "samsung s23"];
+
+// ürünlerin büyük harfle yazdır
+for(let i in urunler){
+   // console.log(urunler[i].toLocaleUpperCase());
+}
+
+//ürünler içinde samsung kaç kere geçiyor
+
+let kackere=0;
+for(let i in urunler){
+    if(urunler[i].indexOf("samsung")){
+        kackere++;
+    }
+}
+//console.log(kackere)
+
+let ogrenciler = [
+    {"ad":"hayrettin","soyad":"dal","notlar":[80, 90, 100]},
+    {"ad":"esmanur","soyad":"dal","notlar":[90, 90, 100]},
+    {"ad":"semanur","soyad":"dal","notlar":[100, 90, 100]}
+];
+//ogrenci not ortalaması ve başarı durumu
+
+for(let i in ogrenciler){
+    let ogrAd=ogrenciler[i].ad;
+    let ogrSoyad=ogrenciler[i].soyad;
+    let ogrNotOrt= 0;
+    for(let j in ogrenciler[i].notlar){
+        ogrNotOrt += ogrenciler[i].notlar[j];
+    }
+    ogrNotOrt = ogrNotOrt/3;
+    console.log(`Adı: ${ogrAd} ${ogrSoyad} olan öğrencinin not ortalaması: ${ogrNotOrt}, ${(ogrNotOrt>=50)?'geçti':'kaldı'}`);
+}
+
+//tüm öğrencilerin not ortalaması kaçtır
+let notlar = [];
+for(let i in ogrenciler){
+    let ogrOrt=0;
+    for(let j in ogrenciler[i].notlar){
+        ogrOrt += ogrenciler[i].notlar[j];
+    }
+    notlar.push(ogrOrt/3);
+}
+console.log((notlar[0]+notlar[1]+notlar[2])/3);
