@@ -1,0 +1,54 @@
+//kendisine gönderilen texti istenilen kadar yazan fonksiyon
+function yaz(text, num=0) {
+    for(let i = 0; i < num; i++){
+        console.log(`${text}`);
+    }    
+}
+//yaz("yazı",2)
+
+//diktörgenin alanını ve çevresini hesaplayan fonksiyon
+function dikAlanVeCevre(small, big){
+    return (`Diktörgenin alanı ${small*big} ve çevresi ${2*small + 2*big}`);
+}
+//console.log(dikAlanVeCevre(4,5));
+
+//yazı tura uygulamasını fonksiyon ile simüle etmek
+function paraAt(){
+    let sonuc = Math.random();
+    if(sonuc >=0.5){
+        console.log("yazı");
+    }else{
+        console.log("tura");
+    }
+    console.log(sonuc);
+}
+//paraAt();
+
+
+//kendisine gönderilen sayının tam bölenlerini dizi şeklinde döndüren fonksiyon
+function tamBolenler(sayi){
+    let bolenler=[];
+
+    for(let i =2; i<sayi;i++){
+        if(sayi%i==0){
+            bolenler.push(i);
+        }
+    }
+
+    return bolenler;
+}
+//console.log(tamBolenler(10));
+//console.log(tamBolenler(15));
+
+
+//Değişen sayıda parametre alan toplam isminde fonksiyon
+
+function toplam(){
+    let sonuc=0;
+    for(let i =0; i<arguments.length;i++){
+        sonuc += arguments[i];
+    }
+    return sonuc;
+}
+//console.log(toplam(2,3));
+//console.log(toplam(2,5));
